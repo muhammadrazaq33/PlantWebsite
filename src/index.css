@@ -7,12 +7,14 @@
 body {
   @apply bg-green-950 text-white font-Jost tracking-wider;
 }
+/* header */
 .nav-link {
   @apply text-lg font-bold duration-300;
 }
 .nav-link:hover {
   @apply text-yellow-500;
 }
+/* hero */
 section {
   @apply py-20 md:py-28;
 }
@@ -34,3 +36,4 @@ h1 {
 .btn_outline:hover {
   @apply bg-yellow-500;
 }
+/* services */
