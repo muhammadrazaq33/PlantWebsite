@@ -45,7 +45,7 @@ const About = () => {
           </div>
         </div>
         {/*end of item-1 */}
-        {/* item-1 */}
+        {/* item-2 */}
         <div className="flex flex-col items-center lg:flex-row-reverse gap-5">
           {/* image */}
           <div className="w-full lg:w-1/2">
