@@ -1,4 +1,5 @@
 import About from "./Components/About";
+import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Popular from "./Components/Popular";
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Popular />
       <Review />
+      <Footer />
     </div>
   );
 }
