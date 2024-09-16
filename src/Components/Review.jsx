@@ -7,7 +7,10 @@ import "swiper/css/pagination"; // Import Pagination module styles
 
 const Review = () => {
   return (
-    <section id="review">
+    <section id="review" className="relative mb-20 md:mb-28 overflow-hidden">
+      <div className="absolute -top-8 -left-12 opacity-50">
+        <img src="./assets/leaf-4.png" alt="" className="w-40 md:w-52 xl:64" />
+      </div>
       {/* title */}
       <div className="flex flex-col items-center gap-3 text-center mb-40">
         <h2 className="title">Custom Review</h2>
