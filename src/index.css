@@ -50,3 +50,34 @@ h3 {
 .popular_card:hover img {
   @apply -top-8;
 }
+
+/* custom css for swiper slider */
+/* Custom styles for pagination bullets */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc; /* Change bullet color */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00ff7f; /* Change active bullet color */
+  opacity: 1;
+}
+
+/* Custom styles for next/prev navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00ff7f; /* Change button color */
+  background-color: rgba(0, 0, 0, 0.5); /* Add background */
+  padding: 30px; /* Adjust padding */
+  border-radius: 50%; /* Make buttons circular */
+}
+
+/* Add hover effect for navigation buttons */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #00ff7f; /* Change background on hover */
+  color: #fff; /* Change text color on hover */
+}
