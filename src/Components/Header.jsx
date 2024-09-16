@@ -1,13 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
+
+  const [showBorder, setShowBorder] = useState(false);
+
+  useEffect(() => {
+    // Function to check scroll position
+    const handleScroll = () => {
+      if (window.scrollY >= 50) {
+        setShowBorder(true);
+      } else {
+        setShowBorder(false);
+      }
+    };
+
+    // Listen for scroll events
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header
       id="header"
-      className="bg-green-950 fixed right-0 left-0 w-full z-50"
+      className={`bg-green-950 fixed right-0 left-0 w-full z-50 ${
+        showBorder ? "border-b border-yellow-500" : ""
+      }`}
     >
-      <nav className="container flex justify-between items-center h-16 sm:20">
+      <nav className={`container flex justify-between items-center h-16 sm:20`}>
         <div className="font-Lobster sm:text-2xl">IndorePlant.</div>
         {/* right side */}
         <div
