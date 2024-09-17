@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 
 const About = () => {
+  useEffect(() => {
+    const common = {
+      // origin: "top",
+      distance: "60px",
+      duration: 2500,
+      reset: true,
+    };
+    ScrollReveal().reveal(".about_top", {
+      ...common,
+      origin: "top",
+      delay: 300,
+    });
+
+    ScrollReveal().reveal(".about_leaf", {
+      ...common,
+      origin: "right",
+      delay: 1000,
+    });
+
+    ScrollReveal().reveal(".about_item_1_content,.about_item_2_img", {
+      ...common,
+      origin: "right",
+      delay: 300,
+    });
+    ScrollReveal().reveal(".about_item_2_content,.about_item_1_img", {
+      ...common,
+      origin: "left",
+      delay: 300,
+    });
+  }, []);
   return (
     <section id="about" className="relative overflow-hidden">
-      <div className="absolute -top-8 -right-12 opacity-50">
+      <div className="about_leaf absolute -top-8 -right-12 opacity-50">
         <img
           src="./assets/leaf-3.png"
           alt=""
@@ -11,7 +42,7 @@ const About = () => {
         />
       </div>
       {/* title */}
-      <div className="flex flex-col items-center gap-3 text-center mb-10 md:mb-20">
+      <div className="about_top flex flex-col items-center gap-3 text-center mb-10 md:mb-20">
         <h2 className="title">About Us</h2>
         <p className="max-w-2xl">Follow instructions for more</p>
       </div>
@@ -25,11 +56,11 @@ const About = () => {
             <img
               src="./assets/plant-1.png"
               alt=""
-              className="w-full sm:w-2/3 lg:w-full mx-auto"
+              className="about_item_1_img w-full sm:w-2/3 lg:w-full mx-auto"
             />
           </div>
           {/* content */}
-          <div className="w-full lg:w-1/2">
+          <div className=" about_item_1_content w-full lg:w-1/2">
             <div className="space-y-5">
               <h3>
                 Make your <span className="text-yellow-500">organic</span>garden
@@ -48,7 +79,7 @@ const About = () => {
         {/* item-2 */}
         <div className="flex flex-col items-center lg:flex-row-reverse gap-5">
           {/* image */}
-          <div className="w-full lg:w-1/2">
+          <div className="about_item_2_img w-full lg:w-1/2">
             <img
               src="./assets/plant-2.png"
               alt=""
@@ -56,7 +87,7 @@ const About = () => {
             />
           </div>
           {/* content */}
-          <div className="w-full lg:w-1/2">
+          <div className="about_item_2_content w-full lg:w-1/2">
             <div className="space-y-5">
               <h3>
                 Come with us <br />{" "}
