@@ -1,18 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css"; // Import core Swiper styles
-import "swiper/css/navigation"; // Import Navigation module styles
-import "swiper/css/pagination"; // Import Pagination module styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Review = () => {
+  useEffect(() => {
+    const common = {
+      // origin: "top",
+      distance: "60px",
+      duration: 2500,
+      reset: true,
+    };
+    ScrollReveal().reveal(".review_top,.review_swiper", {
+      ...common,
+      origin: "top",
+      delay: 300,
+    });
+
+    ScrollReveal().reveal(".review_leaf", {
+      ...common,
+      origin: "left",
+      delay: 1000,
+    });
+  }, []);
   return (
     <section id="review" className="relative mb-20 md:mb-28 overflow-hidden">
-      <div className="absolute -top-8 -left-12 opacity-50">
+      <div className="review_leaf absolute -top-8 -left-12 opacity-50">
         <img src="./assets/leaf-4.png" alt="" className="w-40 md:w-52 xl:64" />
       </div>
       {/* title */}
-      <div className="flex flex-col items-center gap-3 text-center mb-40">
+      <div className="review_top flex flex-col items-center gap-3 text-center mb-40">
         <h2 className="title">Custom Review</h2>
         <p className="max-w-2xl">Follow instructions for more</p>
       </div>
@@ -20,9 +40,9 @@ const Review = () => {
 
       <div className="container">
         <Swiper
-          modules={[Navigation, Pagination]} // Use Swiper modules here
+          modules={[Navigation, Pagination]}
           spaceBetween={30}
-          slidesPerView={1} // Default number of slides to show
+          slidesPerView={1}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           clickable={true}
           grabCursor={true}
@@ -30,23 +50,20 @@ const Review = () => {
           pagination={{ clickable: true }}
           loop={true}
           breakpoints={{
-            // when window width is >= 640px
             640: {
-              slidesPerView: 1, // Show 1 slide on mobile devices
+              slidesPerView: 1,
               spaceBetween: 20,
             },
-            // when window width is >= 768px
             768: {
-              slidesPerView: 2, // Show 2 slides on tablets
+              slidesPerView: 2,
               spaceBetween: 30,
             },
-            // when window width is >= 1024px
             1024: {
-              slidesPerView: 3, // Show 3 slides on desktops
+              slidesPerView: 3,
               spaceBetween: 40,
             },
           }}
-          className="py-12"
+          className="review_swiper py-12"
         >
           {/* SwiperSlide for each review */}
           <SwiperSlide>

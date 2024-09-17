@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 
 const Footer = () => {
   const [showArrow, setShowArrow] = useState(false);
@@ -20,6 +21,26 @@ const Footer = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    const common = {
+      // origin: "top",
+      distance: "60px",
+      duration: 2500,
+      reset: true,
+    };
+    ScrollReveal().reveal(".footer_icon,.footer_content,.copy_right", {
+      ...common,
+      origin: "top",
+      delay: 300,
+    });
+
+    ScrollReveal().reveal(".footer_floral", {
+      ...common,
+      origin: "left",
+      delay: 1000,
+    });
   }, []);
 
   return (
@@ -47,7 +68,7 @@ const Footer = () => {
         </div>
         {/*end of newsLatter */}
         {/* social icon */}
-        <div className="container mt-16 mb-10">
+        <div className="footer_icon container mt-16 mb-10">
           <div className="border-b border-green-500 relative">
             <div className="absolute top-0 transform -translate-y-1/2 left-0 right-0 mx-auto max-w-36">
               <div className="bg-yellow-100 text-lg text-center space-x-2">
@@ -61,7 +82,7 @@ const Footer = () => {
         </div>
         {/*end of social icon */}
         {/* content */}
-        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 text-center md:text-start">
+        <div className="footer_content container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 text-center md:text-start">
           {/* item-1 */}
           <div>
             <div className="text-7xl text-green-700 text-center inline-block">
@@ -110,14 +131,14 @@ const Footer = () => {
         </div>
         {/*end of content */}
         {/* copy right */}
-        <div className="container">
+        <div className="copy_right container">
           <p className="text-center opacity-50 mt-10">
             Copyright &copy; 2024 Muhammad Razaq. All right reserved.
           </p>
         </div>
         {/*end of copy right */}
         {/* floral image */}
-        <div className="absolute bottom-0 left-0 opacity-20 pointer-events-none">
+        <div className="footer_floral absolute bottom-0 left-0 opacity-20 pointer-events-none">
           <img src="./assets/floral-1.png" alt="" className="w-full lg:w-1/2" />
         </div>
         {/* Arrow up/ Scroll up */}(

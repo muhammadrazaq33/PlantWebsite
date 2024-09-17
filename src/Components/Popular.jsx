@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 
 const Popular = () => {
+  useEffect(() => {
+    const common = {
+      origin: "top",
+      distance: "60px",
+      duration: 2500,
+      reset: true,
+      delay: 300,
+    };
+
+    ScrollReveal().reveal(".popular_top", {
+      ...common,
+      origin: "top",
+    });
+
+    ScrollReveal().reveal(".popular_card", {
+      ...common,
+      interval: 100,
+    });
+  }, []);
+
   return (
     <section id="popular" className="bg-green-900">
       {/* title */}
-      <div className="flex flex-col items-center gap-3 text-center mb-40">
+      <div className="popular_top flex flex-col items-center gap-3 text-center mb-40">
         <h2 className="title">Your Choice Plant</h2>
         <p className="max-w-2xl">Follow instructions for more</p>
       </div>
