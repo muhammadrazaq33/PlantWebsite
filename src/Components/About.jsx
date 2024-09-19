@@ -63,7 +63,8 @@ const About = () => {
           <div className=" about_item_1_content w-full lg:w-1/2">
             <div className="space-y-5">
               <h3>
-                Make your <span className="text-yellow-500">organic</span>garden
+                Make your <span className="text-yellow-500">organic </span>
+                garden
               </h3>
               <p className="text-slate-300 font-Lobster">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed rem
